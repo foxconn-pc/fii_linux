@@ -1,5 +1,5 @@
 AC_PREREQ(2.69)
-AC_INIT([dell_apps], [1.0.0], [fanice_luo@163.com], [dell_apps])
+AC_INIT([FoxFlss], [1.0.0], [fanice_luo@163.com], [FoxFlss])
 AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE
