@@ -1,0 +1,21 @@
+[Unit]
+Description=FoxFlss.service
+After=ModemManager.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c "MBIM_PORT=`ls /dev/wwan*mbim*`;/usr/bin/FoxFlss -d $MBIM_PORT -f Check_RF_SSKU"
+StandardError=null
+Restart=on-abort
+CapabilityBoundingSet=CAP_SYS_ADMIN CAP_NET_ADMIN
+ProtectSystem=true
+ProtectHome=true
+PrivateTmp=true
+RestrictAddressFamilies=AF_NETLINK AF_UNIX AF_QIPCRTR
+NoNewPrivileges=true
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
