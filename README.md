@@ -29,5 +29,9 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.1<br>
+    1. Write default configuration for platform which has not RF_Files.<br>
+    2. Add step reboot the module to take effect after writing RF data.<br>
+
 - FoxFlss version:1.0.0<br>
   first version, add FoxFlss tool.<br>
