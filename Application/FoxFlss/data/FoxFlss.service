@@ -4,8 +4,8 @@ After=ModemManager.service
 
 [Service]
 Type=simple
-ExecStartPre=/bin/sleep 15
-ExecStart=/bin/bash -c "MBIM_PORT=`ls /dev/wwan*mbim*`;/usr/bin/FoxFlss -d $MBIM_PORT -f Check_RF_SSKU"
+ExecStartPre=/bin/sleep 20
+ExecStart=/bin/bash -c "while MBIM_PORT=`ls /dev/wwan*mbim*`;do /usr/bin/FoxFlss -d $MBIM_PORT -f Check_RF_SSKU;break;done"
 StandardError=null
 Restart=on-abort
 CapabilityBoundingSet=CAP_SYS_ADMIN CAP_NET_ADMIN
