@@ -12,7 +12,6 @@ Makefile
 FoxFlss/Makefile
 FoxFlss/bin/Makefile
 FoxFlss/data/Makefile
-FoxFlss/doc/Makefile
 ])
 AC_OUTPUT
 

@@ -29,6 +29,11 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.2<br>
+    1. Rename of the RF_Files as "DW5932e_RF.dat".<br>
+    2. Add a reliable way to detect modem devices automatically.<br>
+    3. Remove FoxFlss.service sleep time.<br>
+
 - FoxFlss version:1.0.1<br>
     1. Write default configuration for platform which has not RF_Files.<br>
     2. Add step reboot the module to take effect after writing RF data.<br>

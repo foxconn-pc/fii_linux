@@ -29,7 +29,7 @@ done
 [ -n "$MBIM_PORT" ] || exit 2
 
 UNLOCK_RESULT=1
-FoxFlss -d /dev/$MBIM_PORT
+FoxFlss
 
 UNLOCK_RESULT=$?
 if [ $UNLOCK_RESULT -ne 0 ]; then

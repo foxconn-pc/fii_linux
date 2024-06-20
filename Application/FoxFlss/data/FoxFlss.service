@@ -3,9 +3,8 @@ Description=FoxFlss.service
 After=ModemManager.service
 
 [Service]
-Type=simple
-ExecStartPre=/bin/sleep 20
-ExecStart=/bin/bash -c "while MBIM_PORT=`ls /dev/wwan*mbim*`;do /usr/bin/FoxFlss -d $MBIM_PORT -f Check_RF_SSKU;break;done"
+Type=oneshot
+ExecStart=FoxFlss -f Check_RF_SSKU
 StandardError=null
 Restart=on-abort
 CapabilityBoundingSet=CAP_SYS_ADMIN CAP_NET_ADMIN
@@ -18,5 +17,3 @@ User=root
 
 [Install]
 WantedBy=multi-user.target
-
-
