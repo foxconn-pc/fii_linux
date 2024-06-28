@@ -1,7 +1,13 @@
+all:
+	$(MKDIR_P) $(prefix)/usr/bin; \
+	cp FoxFlss $(prefix)/usr/bin; \
+	$(NULL)
+
 install-data-hook:
-	cp FoxFlss $(prefix)/bin; \
-	chmod u=rwx,go=rx $(prefix)/bin/FoxFlss; \
+	cp $(prefix)/usr/bin/FoxFlss /usr/bin; \
+	chmod u=rwx,go=rx /usr/bin/FoxFlss; \
 	$(NULL)
 
 uninstall-hook:
-	cd $(prefix)/bin && rm -f FoxFlss
+	rm -f /usr/bin/FoxFlss; \
+	$(NULL)

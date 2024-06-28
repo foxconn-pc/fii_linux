@@ -1,5 +1,5 @@
 autoreconf --force --install 
-./configure --prefix=/usr
+./configure --prefix=<path>
 make
 sudo make install
 

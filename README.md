@@ -15,7 +15,7 @@ All open source codes are GPLv2+.<br>
 - All details of build or install steps could be found in below:
     1. `pushd Application`
     2. `autoreconf --force --install`
-    3. `./configure --prefix=/usr`
+    3. `./configure --prefix=<path>`
     4. `make`
     5. `sudo make install`
     6. `sudo systemctl daemon-reload`
