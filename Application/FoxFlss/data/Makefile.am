@@ -1,4 +1,5 @@
 # Directory for user-enabled tools
+FoxFlss_dir = /opt/foxconn
 FoxFlss_datadir = /opt/foxconn/data
 FoxFlss_userdir = /opt/foxconn/fcc-unlock.d
 
@@ -10,35 +11,47 @@ FoxFlss_user_SCRIPTS = \
 	DW5932e \
 	$(NULL)
 
-EXTRA_DIST = $(FoxFlss_user_SCRIPTS) $(FoxFlss_data_SCRIPTS)
-
 dist_services = FoxFlss.service
 
 all:
-	$(MKDIR_P) $(prefix)/usr/lib/systemd/system; \
-	cp $(dist_services) $(prefix)/usr/lib/systemd/system; \
-	$(MKDIR_P) $(prefix)$(FoxFlss_datadir); \
-	cp $(FoxFlss_data_SCRIPTS) $(prefix)$(FoxFlss_datadir); \
-	$(MKDIR_P) $(prefix)$(FoxFlss_userdir); \
-	cp $(FoxFlss_user_SCRIPTS) $(prefix)$(FoxFlss_userdir); \
-	$(NULL)
+	@if test "$(prefix)" = "/usr"; then \
+		echo "nothing to do"; \
+	else \
+		echo "nothing to do"; \
+	fi
 
 install-data-hook:
-	install -D $(prefix)/usr/lib/systemd/system/$(dist_services) /usr/lib/systemd/system; \
-	chmod u=rw,g=r,o=r /usr/lib/systemd/system/$(dist_services); \
-	$(MKDIR_P) $(DESTDIR)$(FoxFlss_datadir); \
-	install -D $(prefix)$(FoxFlss_datadir)/$(FoxFlss_data_SCRIPTS) $(DESTDIR)$(FoxFlss_datadir); \
-	chmod go+rx $(DESTDIR)$(FoxFlss_datadir); \
-	$(MKDIR_P) $(DESTDIR)$(FoxFlss_userdir); \
-	cd $(DESTDIR)$(FoxFlss_userdir); \
-	install -D $(prefix)$(FoxFlss_userdir)/$(FoxFlss_user_SCRIPTS) $(DESTDIR)$(FoxFlss_userdir); \
-	chmod go+rx $(DESTDIR)$(FoxFlss_userdir); \
-	$(LN_S) -s -f DW5932e 105b:e0f5; \
-	$(LN_S) -s -f DW5932e 105b:e0f9; \
-	$(NULL)
+	@if test "$(prefix)" = "/usr"; then \
+		cp $(dist_services) $(prefix)/lib/systemd/system; \
+		chmod u=rw,g=r,o=r $(prefix)/lib/systemd/system/$(dist_services); \
+		$(MKDIR_P) $(FoxFlss_datadir); \
+		$(MKDIR_P) $(FoxFlss_userdir); \
+		cp $(FoxFlss_data_SCRIPTS) $(FoxFlss_datadir); \
+		chmod go+rx $(FoxFlss_datadir); \
+		cp $(FoxFlss_user_SCRIPTS) $(FoxFlss_userdir); \
+		chmod go+rx $(FoxFlss_userdir); \
+		cd $(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f5; \
+		cd $(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f9; \
+	else \
+		$(MKDIR_P) $(prefix)/usr/lib/systemd/system; \
+		$(MKDIR_P) $(prefix)$(FoxFlss_datadir); \
+		$(MKDIR_P) $(prefix)$(FoxFlss_userdir); \
+		cp $(dist_services) $(prefix)/usr/lib/systemd/system; \
+		chmod u=rw,g=r,o=r $(prefix)/usr/lib/systemd/system/$(dist_services); \
+		cp $(FoxFlss_data_SCRIPTS) $(prefix)$(FoxFlss_datadir); \
+		chmod go+rx $(prefix)$(FoxFlss_datadir); \
+		cp $(FoxFlss_user_SCRIPTS) $(prefix)$(FoxFlss_userdir); \
+		chmod go+rx $(prefix)$(FoxFlss_userdir); \
+		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f5; \
+		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f9; \
+		rm -rf $(FoxFlss_dir); \
+	fi
 
 uninstall-hook:
-	rm -rf /opt/foxconn/; \
-	rm -rf /usr/lib/systemd/system/$(dist_services); \
-	$(NULL)
-
+	@if test "$(prefix)" = "/usr"; then \
+		rm -rf $(FoxFlss_dir); \
+		rm -rf $(prefix)/lib/systemd/system/$(dist_services); \
+	else \
+		rm -rf $(prefix)/opt; \
+		rm -rf $(prefix)/usr; \
+	fi
