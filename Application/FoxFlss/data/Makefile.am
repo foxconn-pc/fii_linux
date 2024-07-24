@@ -1,7 +1,7 @@
 # Directory for user-enabled tools
 FoxFlss_dir = /opt/foxconn
-FoxFlss_datadir = /opt/foxconn/data
-FoxFlss_userdir = /opt/foxconn/fcc-unlock.d
+FoxFlss_datadir = $(FoxFlss_dir)/data
+FoxFlss_userdir = $(FoxFlss_dir)/fcc-unlock.d
 
 FoxFlss_data_SCRIPTS = \
 	DW5932e_RF.dat \
@@ -19,6 +19,10 @@ all:
 	else \
 		echo "nothing to do"; \
 	fi
+
+install-data-am:
+	@$(NORMAL_INSTALL)
+	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 
 install-data-hook:
 	@if test "$(prefix)" = "/usr"; then \
@@ -44,8 +48,11 @@ install-data-hook:
 		chmod go+rx $(prefix)$(FoxFlss_userdir); \
 		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f5; \
 		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f9; \
-		rm -rf $(FoxFlss_dir); \
 	fi
+
+uninstall-am:
+	@$(NORMAL_INSTALL)
+	$(MAKE) $(AM_MAKEFLAGS) uninstall-hook
 
 uninstall-hook:
 	@if test "$(prefix)" = "/usr"; then \
