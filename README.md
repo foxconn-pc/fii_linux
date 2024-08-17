@@ -1,5 +1,5 @@
 # Foxconn Linux application
-This is a Foxconn linux application for dell wwan DW5932e devices.<br>
+This is a Foxconn linux application for dell wwan DW5932e and DW5934e devices.<br>
   **FoxFlss:** Tool to unlock Fcc and write RF_Files dynamically(It is not open source).<br>
 
 # License
@@ -29,6 +29,9 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.4<br>
+    1. Support dell wwan DW5934e device of Fcc unlock function.<br>
+
 - FoxFlss version:1.0.3<br>
     1. Fixed some issues caused by abnormal module exits.<br>
     2. Modify prefix parameter setting to perform different operations.<br>
