@@ -1,5 +1,5 @@
 #!/bin/sh
-# Foxconn SDX62 (Dell DW5932e) FCC unlock operation
+# Dell wwan DW5932e and DW5934e of FCC unlock operation
 #!/bin/sh
 
 # SPDX-License-Identifier: CC0-1.0
@@ -33,7 +33,7 @@ FoxFlss
 
 UNLOCK_RESULT=$?
 if [ $UNLOCK_RESULT -ne 0 ]; then
-  echo "SDX62 FCC unlock FAILED" >&2
+  echo "Device FCC unlock FAILED" >&2
 fi
 
 exit $UNLOCK_RESULT

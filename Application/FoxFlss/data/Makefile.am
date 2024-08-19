@@ -8,7 +8,7 @@ FoxFlss_data_SCRIPTS = \
 	$(NULL)
 
 FoxFlss_user_SCRIPTS = \
-	DW5932e \
+	DW593Xe \
 	$(NULL)
 
 dist_services = FoxFlss.service
@@ -36,6 +36,7 @@ install-data-hook:
 		chmod go+rx $(FoxFlss_userdir); \
 		cd $(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f5; \
 		cd $(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f9; \
+		cd $(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e11d; \
 	else \
 		$(MKDIR_P) $(prefix)/usr/lib/systemd/system; \
 		$(MKDIR_P) $(prefix)$(FoxFlss_datadir); \
@@ -48,6 +49,7 @@ install-data-hook:
 		chmod go+rx $(prefix)$(FoxFlss_userdir); \
 		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f5; \
 		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e0f9; \
+		cd $(prefix)$(FoxFlss_userdir) && $(LN_S) -s -f $(FoxFlss_user_SCRIPTS) 105b:e11d; \
 	fi
 
 uninstall-am:
