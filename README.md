@@ -29,6 +29,10 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.5<br>
+    1. Fixed MM calls FoxFlss to unlock without waiting time.<br>
+    2. Add test-quick-suspend-resume.conf, fix failed to enter suspend while browsing web pages.<br>
+
 - FoxFlss version:1.0.4<br>
     1. Support dell wwan DW5934e device of Fcc unlock function.<br>
 
