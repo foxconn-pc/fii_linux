@@ -29,6 +29,9 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.7<br>
+    1. Update RF data.<br>
+
 - FoxFlss version:1.0.6<br>
     1. Support dell wwan DW5934e device of writing RF data function.<br>
     2. Automatically set test parameter of MM according to MM version.<br>
