@@ -29,6 +29,10 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.8<br>
+    1. Update RF data.<br>
+    2. Correct tuner number for some platform.<br>
+
 - FoxFlss version:1.0.7<br>
     1. Update RF data.<br>
 
