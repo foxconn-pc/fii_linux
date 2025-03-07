@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mm_options=('--test-low-power-suspend-resume' '--test-quick-suspend-resume')
+mm_options=('--remove-test-low-power-suspend-resume' '--test-quick-suspend-resume')
 
 service_file=$(systemctl show ModemManager -p FragmentPath --value)
 if [[ -z "$service_file" ]]; then
