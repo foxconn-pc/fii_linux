@@ -29,6 +29,9 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.10<br>
+    1. Update DW5934e RF data files.<br>
+
 - FoxFlss version:1.0.9<br>
     1. Update DW5932e support platform list.<br>
     2. Fix DW5934e can't connect to NW when host cold boot.<br>
