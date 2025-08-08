@@ -1,0 +1,4 @@
+SUBDIRS = \
+	. \
+	FoxFlss \
+	$(NULL)
