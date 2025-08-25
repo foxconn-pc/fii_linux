@@ -6,8 +6,8 @@ This is a Foxconn linux application for dell wwan DW5932e and DW5934e devices.<b
 All open source codes are GPLv2+.<br>
 
 # Notice
-  - FoxFlss binary file was built in Ubuntu18.04, it can be used above (include) 18.04<br>
-  - This application runs only on ubuntu22.04,other ubuntu versions and other OS have unverified.
+  - FoxFlss binary file was built in Ubuntu20.04, it can be used above (include) 20.04<br>
+  - This application runs only on ubuntu22.04 and ubuntu24.04,other ubuntu versions and other OS have unverified.
 
 # Building on Ubuntu
 
