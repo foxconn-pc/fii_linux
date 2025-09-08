@@ -29,6 +29,9 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.11<br>
+    1. Apply low power suspend solution for new MM.<br>
+
 - FoxFlss version:1.0.10<br>
     1. Update DW5934e RF data files.<br>
 
