@@ -1,5 +1,5 @@
 AC_PREREQ(2.69)
-AC_INIT([FoxFlss], [1.0.11], [slark_xiao@163.com], [FoxFlss])
+AC_INIT([FoxFlss], [1.0.12], [slark_xiao@163.com], [FoxFlss])
 AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE
