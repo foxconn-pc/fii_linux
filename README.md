@@ -29,6 +29,9 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.13<br>
+    1. Limit the non-secured device from switching to online mode.<br>
+
 - FoxFlss version:1.0.12<br>
     1. Update RF data.<br>
     2. Add more DW5934e platform support.<br>
