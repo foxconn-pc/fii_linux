@@ -29,6 +29,10 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.16<br>
+    1. Add support for DW5934e Kingda ka ARL.<br>
+    2. Fix DW5932e Delta2 WB failure issue.<br>
+
 - FoxFlss version:1.0.15<br>
     1. Optimize MCFG matching strategy.<br>
 
