@@ -29,6 +29,10 @@ All open source codes are GPLv2+.<br>
     2. `sudo ln -sft /usr/lib/x86_64-linux-gnu/ModemManager/fcc-unlock.d/ /opt/foxconn/fcc-unlock.d/*`
 
 # Release history
+- FoxFlss version:1.0.17<br>
+    1. Add support for Dell Pro Precision 9.<br>
+    2. Update the default autosuspend_delay_ms value.<br>
+
 - FoxFlss version:1.0.16<br>
     1. Add support for DW5934e Kingda ka ARL.<br>
     2. Fix DW5932e Delta2 WB failure issue.<br>
